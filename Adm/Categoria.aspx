@@ -12,10 +12,12 @@
     <asp:MultiView ID="MultiViewCategoria" runat="server">
         <asp:View ID="tabListabem" runat="server">
             <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="DataSetTableAdapters.TbCategoriaTableAdapter"></asp:ObjectDataSource>
-            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="cat_id" DataSourceID="ObjectDataSource1">
+            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="cat_id" DataSourceID="ObjectDataSource1" AllowSorting="true" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
                 <Columns>
-                    <asp:BoundField DataField="cat_id" HeaderText="cat_id" InsertVisible="False" ReadOnly="True" SortExpression="cat_id" />
-                    <asp:BoundField DataField="cat_nome" HeaderText="cat_nome" SortExpression="cat_nome" />
+                    <asp:BoundField DataField="cat_id" HeaderText="cat_id" Visible="false" InsertVisible="False" ReadOnly="True" SortExpression="cat_id" />
+                    <asp:BoundField DataField="cat_nome" HeaderText="Categoria" SortExpression="cat_nome" />
+
+                    <asp:CommandField HeaderText="Selecionar" SelectText="Selecionar" ButtonType="Button" ShowSelectButton="true" />
                 </Columns>
             </asp:GridView>
 
@@ -24,8 +26,9 @@
 
         <asp:View ID="tabCadastro" runat="server">
             <uc1:BarraEdicao runat="server" ID="BarraEdicao" /><br />
+            <asp:HiddenField ID="campoID" runat="server" />
             Nome<br />
-            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+            <asp:TextBox ID="txtCatNome" runat="server"></asp:TextBox>
         </asp:View>
     </asp:MultiView>
 </asp:Content>

@@ -16,6 +16,8 @@
         <asp:HyperLink ID="linkNoticia" runat="server" NavigateUrl="~/Adm/Noticia.aspx">Noticia</asp:HyperLink>
         <asp:HyperLink ID="linkUsuario" runat="server" NavigateUrl="~/Adm/Usuario.aspx">Usuário</asp:HyperLink>
 
+        <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">Sair</asp:LinkButton>
+
         <br /><hr /><br />
 
         <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
