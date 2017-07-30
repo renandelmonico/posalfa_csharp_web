@@ -58,7 +58,7 @@ GO
 SET ANSI_PADDING OFF
 GO
 
-ALTER TABLE [dbo].[TbNoticia]  WITH CHECK ADD  CONSTRAINT [FK_TbNoticia_TbCategoria] FOREIGN KEY([not_id])
+ALTER TABLE [dbo].[TbNoticia]  WITH CHECK ADD  CONSTRAINT [FK_TbNoticia_TbCategoria] FOREIGN KEY([cat_id])
 REFERENCES [dbo].[TbCategoria] ([cat_id])
 GO
 
